@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("/eindopdracht-ip-valerie-muller/images/buiten-achtergrond.jpeg");
+    background-image: url("images/buiten-achtergrond.jpeg");
     /* https://pin.it/1XP1GDCdz */
     background-attachment: fixed;
     background-size: cover;
