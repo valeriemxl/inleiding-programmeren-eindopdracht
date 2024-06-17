@@ -2,29 +2,74 @@
 const knopSlapen = document.querySelector("#knop-slapen")
 const knopEten = document.querySelector("#knop-eten")
 const knopSpelen = document.querySelector("#knop-spelen")
+const nijntjeBlauw = document.querySelector("#nijntje-blauw")
+
 
 let pElement = document.querySelector("p")
+let nijntjeStatus = false
 
 // Deze functions zorgen ervoor dat als je op een van de knoppen klikt je actie wordt omgezet in tekst. Dus je ziet wat je hebt gedaan
 function gaSlapen() {
-    console.log("Nijntje gaat slapen")
     pElement.textContent = "Nijntje is aan het slapen"
+    if (nijntjeStatus) {
+        nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        nijntjeStatus = false
+    }
+    else {
+        nijntjeBlauw.src = "images/slapen.jpeg"
+        nijntjeStatus = true
+    }
 }
 
 function gaEten() {
-    console.log("Nijntje gaat eten")
     pElement.textContent = "Nijntje is aan het eten"
+    if (nijntjeStatus) {
+        // nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        nijntjeStatus = false
+    }
+    else {
+        nijntjeBlauw.src = "images/eten.jpeg"
+        nijntjeStatus = true
+    }
 }
 
 function gaSpelen() {
-    console.log("Nijntje gaat spelen")
     pElement.textContent = "Nijntje is aan het spelen"
+    if (nijntjeStatus) {
+        // nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        nijntjeStatus = false
+    }
+    else {
+        nijntjeBlauw.src = "images/spelen.jpeg"
+        nijntjeStatus = true
+    }
 }
 
 // Deze event listeners zorgen ervoor dat...
 knopSlapen.addEventListener("click", gaSlapen)
 knopEten.addEventListener("click", gaEten)
 knopSpelen.addEventListener("click", gaSpelen)
+
+
+
+/*
+let slapen = document.querySelector("#slapen")
+let nijntjeBlauw = document.querySelector("#nijntje-blauw")
+let nijntjeStatus = false
+
+function slapenKnop() {
+    if (nijntjeStatus) {
+        nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        nijntjeStatus = false
+    }
+    else {
+        nijntjeBlauw.src = "images/slapen.jpeg"
+        nijntjeStatus = true
+    }
+}
+
+slapen.addEventListener('click', slapenKnop)
+*/
 
 /*
 Vragen:
