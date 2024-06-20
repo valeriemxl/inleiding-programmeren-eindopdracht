@@ -12,12 +12,12 @@ let nijntjeStatus = false
 function gaSlapen() {
     if (nijntjeStatus) {
         pElement.textContent = "Nijntje heeft heerlijk geslapen"
-        nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp"
         nijntjeStatus = false
     }
     else {
         pElement.textContent = "Nijntje is aan het slapen"
-        nijntjeBlauw.src = "images/slapen.jpeg"
+        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/slapen.jpeg"
         nijntjeStatus = true
     }
 }
@@ -25,12 +25,12 @@ function gaSlapen() {
 function gaEten() {
     if (nijntjeStatus) {
         pElement.textContent = "Nijntje heeft goed gegeten"
-        nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp"
         nijntjeStatus = false
     }
     else {
         pElement.textContent = "Nijntje is aan het eten"
-        nijntjeBlauw.src = "images/eten.jpeg"
+        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/eten.jpeg"
         nijntjeStatus = true
     }
 }
@@ -38,12 +38,12 @@ function gaEten() {
 function gaSpelen() {
     if (nijntjeStatus) {
         pElement.textContent = "Nijntje heeft lekker gespeeld"
-        nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp"
         nijntjeStatus = false
     }
     else {
         pElement.textContent = "Nijntje is aan het spelen"
-        nijntjeBlauw.src = "images/spelen.jpeg"
+        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/spelen.jpeg"
         nijntjeStatus = true
     }
 }
