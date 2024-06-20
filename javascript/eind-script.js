@@ -8,38 +8,41 @@ const nijntjeBlauw = document.querySelector("#nijntje-blauw")
 let pElement = document.querySelector("p")
 let nijntjeStatus = false
 
-// Deze functions zorgen ervoor dat als je op een van de knoppen klikt je actie wordt omgezet in tekst. Dus je ziet wat je hebt gedaan
+// Deze functions zorgen ervoor dat als je op een van de knoppen klikt je actie wordt omgezet in tekst.
 function gaSlapen() {
-    pElement.textContent = "Nijntje is aan het slapen"
     if (nijntjeStatus) {
+        pElement.textContent = "Nijntje heeft heerlijk geslapen"
         nijntjeBlauw.src = "images/nijntje-blauw.webp"
         nijntjeStatus = false
     }
     else {
+        pElement.textContent = "Nijntje is aan het slapen"
         nijntjeBlauw.src = "images/slapen.jpeg"
         nijntjeStatus = true
     }
 }
 
 function gaEten() {
-    pElement.textContent = "Nijntje is aan het eten"
     if (nijntjeStatus) {
-        // nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        pElement.textContent = "Nijntje heeft goed gegeten"
+        nijntjeBlauw.src = "images/nijntje-blauw.webp"
         nijntjeStatus = false
     }
     else {
+        pElement.textContent = "Nijntje is aan het eten"
         nijntjeBlauw.src = "images/eten.jpeg"
         nijntjeStatus = true
     }
 }
 
 function gaSpelen() {
-    pElement.textContent = "Nijntje is aan het spelen"
     if (nijntjeStatus) {
-        // nijntjeBlauw.src = "images/nijntje-blauw.webp"
+        pElement.textContent = "Nijntje heeft lekker gespeeld"
+        nijntjeBlauw.src = "images/nijntje-blauw.webp"
         nijntjeStatus = false
     }
     else {
+        pElement.textContent = "Nijntje is aan het spelen"
         nijntjeBlauw.src = "images/spelen.jpeg"
         nijntjeStatus = true
     }
@@ -73,10 +76,10 @@ slapen.addEventListener('click', slapenKnop)
 
 /*
 Vragen:
-- Als ik bijvoorbeeld op Slapen klik wil ik dat er een plaatje van een slapende Nijntje komt
+- Als ik bijvoorbeeld op Slapen klik wil ik dat er een plaatje van een slapende Nijntje komt 
 - Progressiebar?
 - Timer?
-- 
+- Plaatje veranderen
 
 Volgorde:
 1. Constanten
