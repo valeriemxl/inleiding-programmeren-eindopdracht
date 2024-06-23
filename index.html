@@ -14,7 +14,7 @@
     <h1>Nijntje Tamagochi</h1>
 
     <div class="beginnen">
-        <p>Klik op een knop om te beginnen</p>
+        <p id="mainText">Klik op een knop om te beginnen</p>
     </div>
 
     <div class="emoties-nijntje-kleding">
@@ -25,18 +25,17 @@
                 </div>
 
                 <div class="slaap-cijfer">
-                    <p id="slaap-cijfer">0</p>
+                    <progress id="progressSlaap" max="10" value="0"></progress>
                 </div>
             </div>
 
-
-            <div class="honger-progressie">
+            <div class="honger-progressie"> 
                 <div class="honger">
                     <p>Honger</p>
                 </div>
 
                 <div class="honger-cijfer">
-                    <p id="honger-cijfer">0</p>
+                    <progress id="progressHonger" max="10" value="0"></progress>
                 </div>
             </div>
 
@@ -46,30 +45,36 @@
                 </div>
 
                 <div class="plezier-cijfer">
-                    <p id="plezier-cijfer">0</p>
+                    <progress id="progressPlezier" max="10" value="0"></progress>
                 </div>
             </div>
         </div>
+
+
 
         <div class="nijntje-blauw">
             <img id="nijntje-blauw" src="images/nijntje-blauw.webp" alt="">
         </div>
 
+
+
         <div class="kleding-en-knoppen">
             <ul class="kleding">
                 <li>
-                    <button id="knop-kleding"><img src="images/nijntje-beer.gif"></button>
+                    <button id="kledingRoze"><img src="images/nijntje-roze-strik.png"></button>
                 </li>
                 <li>
-                    <button id="knop-kleding"><img src="images/nijntje-beer.gif"></button>
+                    <button id="kledingRood"><img src="images/nijnjte-rood.png"></button>
                 </li>
                 <li>
-                    <button id="knop-kleding"><img src="images/nijntje-beer.gif"></button>
+                    <button id="kledingFeest"><img src="images/nijntje-feest.png"></button>
                 </li>
                 <li>
-                    <button id="knop-kleding"><img src="images/nijntje-beer.gif"></button>
+                    <button id="kledingCool"><img src="images/nijntje-cool.png"></button>
                 </li>
             </ul>
+
+
 
             <div class="knoppen-rest">
                 <div class="knop-toepassen">
@@ -84,21 +89,23 @@
 
     </div>
 
+
+
     <div class="container">
         <div class="knoppen">
             <div class="knop-slapen">
-                <button id="knop-slapen"><img src="images/slapen.jpeg" alt=""></button>
-                <p class="p-slapen">Laat Nijntje slapen</p>
+                <button id="knop-slapen"><img src="images/slapen.jpeg"></button>
+                <p id="slapenText">Laat Nijntje slapen</p>
             </div>
 
             <div class="knop-eten">
-                <button id="knop-eten"><img src="images/eten.jpeg" alt=""></button>
-                <p class="p-eten">Laat Nijntje eten</p>
+                <button id="knop-eten"><img src="images/eten.jpeg"></button>
+                <p id="etenText">Laat Nijntje eten</p>
             </div>
 
             <div class="knop-spelen">
-                <button id="knop-spelen"><img src="images/spelen.jpeg" alt=""></button>
-                <p class="p-spelen">Laat Nijntje spelen</p>
+                <button id="knop-spelen"><img src="images/spelen.jpeg"></button>
+                <p id="spelenText">Laat Nijntje spelen</p>
             </div>
         </div>
     </div>

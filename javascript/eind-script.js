@@ -1,51 +1,106 @@
 // Deze constanten zorgen ervoor...
-const knopSlapen = document.querySelector("#knop-slapen")
-const knopEten = document.querySelector("#knop-eten")
-const knopSpelen = document.querySelector("#knop-spelen")
-const nijntjeBlauw = document.querySelector("#nijntje-blauw")
+const pElement = document.querySelector("#mainText");
+
+const progressSlaap = document.querySelector("#progressSlaap");
+const progressHonger = document.querySelector("#progressHonger");
+const progressPlezier = document.querySelector("#progressPlezier");
+
+const nijntjeBlauw = document.querySelector("#nijntje-blauw");
+
+const knopRoze = document.querySelector("#kledingRoze");
+const knopRood = document.querySelector("#kledingRood");
+const knopFeest = document.querySelector("#kledingFeest");
+const knopCool = document.querySelector("#kledingCool");
+
+const knopSlapen = document.querySelector("#knop-slapen");
+const knopEten = document.querySelector("#knop-eten");
+const knopSpelen = document.querySelector("#knop-spelen");
+
+const pSlapen = document.querySelector("#slapenText");
+const pEten = document.querySelector("#etenText");
+const pSpelen = document.querySelector("#spelenText");
+
+let nijntjeStatus = false;
+let scoreSlaap = 0;
+let scoreHonger = 0;
+let scorePlezier = 0;
 
 
-let pElement = document.querySelector("p")
-let nijntjeStatus = false
-
-// Deze functions zorgen ervoor dat als je op een van de knoppen klikt je actie wordt omgezet in tekst.
+// Deze functions zorgen ervoor dat als je op een van de knoppen klikt je actie wordt omgezet in tekst en de afbeelding veranderd naar de actie.
 function gaSlapen() {
     if (nijntjeStatus) {
-        pElement.textContent = "Nijntje heeft heerlijk geslapen"
-        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp"
-        nijntjeStatus = false
+        nijntjeStatus = false;
+        showGaSlapen();
     }
     else {
-        pElement.textContent = "Nijntje is aan het slapen"
-        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/slapen.jpeg"
-        nijntjeStatus = true
+        scoreSlaap += 1;
+        nijntjeStatus = true;
+        showHeeftGeslapen();
     }
 }
 
 function gaEten() {
     if (nijntjeStatus) {
-        pElement.textContent = "Nijntje heeft goed gegeten"
-        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp"
+        showGaEten();
         nijntjeStatus = false
     }
     else {
-        pElement.textContent = "Nijntje is aan het eten"
-        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/eten.jpeg"
+        scoreHonger += 1;
+        showHeeftGegeten();
         nijntjeStatus = true
     }
 }
 
 function gaSpelen() {
     if (nijntjeStatus) {
-        pElement.textContent = "Nijntje heeft lekker gespeeld"
-        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp"
+        showGaSpelen();
         nijntjeStatus = false
     }
     else {
-        pElement.textContent = "Nijntje is aan het spelen"
-        nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/spelen.jpeg"
+        scorePlezier += 1;
+        showHeeftGespeeld();
         nijntjeStatus = true
     }
+}
+
+function showDefault() {
+    pElement.textContent = "Klik op een een knop om te beginnen";
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp";
+}
+
+function showGaSlapen() {
+    pElement.textContent = "Nijntje is aan het slapen";
+    pSlapen.textContent = "Maak Nijntje wakker";
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/slapen.jpeg";
+}
+
+function showHeeftGeslapen() {
+    pElement.textContent = "Nijntje heeft heerlijk geslapen";
+    pSlapen.textContent = "Laat Nijntje slapen";
+    progressSlaap.value = scoreSlaap;
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp";
+}
+
+function showGaEten() {
+    pElement.textContent = "Nijntje is aan het eten"
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/eten.jpeg"
+}
+
+function showHeeftGegeten() {
+    pElement.textContent = "Nijntje heeft goed gegeten"
+    progressHonger.value = scoreHonger;
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp"
+}
+
+function showGaSpelen() {
+    pElement.textContent = "Nijntje is aan het spelen"
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/spelen.jpeg"
+}
+
+function showHeeftGespeeld() {
+    pElement.textContent = "Nijntje heeft lekker gespeeld"
+    progressPlezier.value = scorePlezier;
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp"
 }
 
 // Deze event listeners zorgen ervoor dat...
@@ -53,33 +108,27 @@ knopSlapen.addEventListener("click", gaSlapen)
 knopEten.addEventListener("click", gaEten)
 knopSpelen.addEventListener("click", gaSpelen)
 
+knopRoze.addEventListener("click", draagRoze)
+knopRood.addEventListener("click", draagRood)
+knopFeest.addEventListener("click", draagFeest)
+knopCool.addEventListener("click", draagCool)
 
 
-/*
-let slapen = document.querySelector("#slapen")
-let nijntjeBlauw = document.querySelector("#nijntje-blauw")
-let nijntjeStatus = false
+// function MaakMoe() {
+//     if (scoreSlaap > 0) {
+//         scoreSlaap -= 1;
+//         progressSlaap.value = scoreSlaap;
+//     }
+//     setTimeout(MaakMoe, 10000);
+// }
 
-function slapenKnop() {
-    if (nijntjeStatus) {
-        nijntjeBlauw.src = "images/nijntje-blauw.webp"
-        nijntjeStatus = false
-    }
-    else {
-        nijntjeBlauw.src = "images/slapen.jpeg"
-        nijntjeStatus = true
-    }
-}
+// MaakMoe();
 
-slapen.addEventListener('click', slapenKnop)
-*/
+
 
 /*
 Vragen:
-- Als ik bijvoorbeeld op Slapen klik wil ik dat er een plaatje van een slapende Nijntje komt 
-- Progressiebar?
-- Timer?
-- Plaatje veranderen
+- ...
 
 Volgorde:
 1. Constanten
@@ -90,6 +139,8 @@ Volgorde:
 
 Bronnen:
 https://www.youtube.com/watch?v=KB6CRow6Ulw&ab_channel=BenCodeZen
-https://www.w3schools.com/howto/howto_js_slideshow.asp
 https://codepen.io/supercooldog5/pen/xxxBwdV
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress (progress bar)
+https://stackoverflow.com/questions/43524985/how-to-get-change-value-of-html5-progress-bar (progress bar)
+https://stackoverflow.com/questions/7188145/call-a-javascript-function-every-5-seconds-continuously (timer)
 */

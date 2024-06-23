@@ -14,7 +14,7 @@ body {
     color: black;
 }
 
-/* Nijntje Tamagochi */
+/* Nijntje Tamagochi (tekst) */
 h1 {
     font-size: 3em;
     text-align: center;
@@ -56,10 +56,11 @@ h1 {
 /* Nijntje tamagotchi afbeelding */
 .nijntje-blauw {
     text-align: center;
-    width: 3em;
-    height: 3em;
-    margin-right: 20em;
-    /* margin-bottom: 10em; */
+}
+
+.nijntje-blauw img {
+    width: 25em;
+    height: 25em;
 }
 
 /* Outfits */
@@ -85,16 +86,16 @@ ul {
     width: 8em;
     height: 8em;
     vertical-align: middle;
-    background-color: aliceblue;
+    background-color: transparent;
     border: none;
     border-radius: .25em;
     cursor: pointer;
 }
 
 .kleding li button img {
-    object-fit: fill;
-    width: 6em;
-    height: 7em;
+    /* object-fit: fill; */
+    width: 5em;
+    height: 8em;
 }
 
 /* Knoppen toepassen en random */
@@ -135,17 +136,25 @@ ul {
 
 .knoppen button {
     /* width: 8em;
-    height: 8em; */
-    /* vertical-align: middle; */
+    height: 8em;
+    vertical-align: middle; */
     background-color: transparent;
     border: none;
     cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.knoppen button:hover {
+
+    outline: 5px solid blue;
+    outline-offset: -5px;
 }
 
 .knoppen button img {
     width: 8em;
     height: 8em;
-    border-radius: .25em;
+    /* border-radius: .25em; */
 }
 
 .knop-slapen {
