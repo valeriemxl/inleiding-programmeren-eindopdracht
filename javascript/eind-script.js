@@ -49,7 +49,7 @@ function showDefault() {
 // Kleding
 function showBlauw() {
     pElement.textContent = "Wat gaan we nu doen?";
-    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp";
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
 }
 
 function showRoze() {
@@ -88,7 +88,7 @@ function showHeeftGeslapen() {
     pElement.textContent = "Nijntje heeft heerlijk geslapen";
     pSlapen.textContent = "Slapen";
     progressSlaap.value = scoreSlaap;
-    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp";
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
 
     knopEten.disabled = false;
     knopSpelen.disabled = false;
@@ -107,7 +107,7 @@ function showHeeftGegeten() {
     pElement.textContent = "Nijntje heeft goed gegeten";
     pEten.textContent = "Eten";
     progressHonger.value = scoreHonger;
-    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp";
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
 
     knopSlapen.disabled = false;
     knopSpelen.disabled = false;
@@ -126,7 +126,7 @@ function showHeeftGespeeld() {
     pElement.textContent = "Nijntje heeft lekker gespeeld";
     pSpelen.textContent = "Spelen";
     progressPlezier.value = scorePlezier;
-    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp";
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
 
     knopSlapen.disabled = false;
     knopEten.disabled = false;
@@ -143,7 +143,7 @@ function startSlaapTimer() {
         }
         else {
             clearInterval(toenameSlaap);
-            alert("Nijntje heeft genoeg geslapen");
+            alert("Nijntje heeft genoeg geslapen!");
         }
     }, 10);
 }
@@ -171,7 +171,7 @@ function startHongerTimer() {
         }
         else {
             clearInterval(toenameHonger);
-            alert("Nijntje heeft genoeg gegeten");
+            alert("Nijntje heeft genoeg gegeten!");
         }
     }, 10);
 }
@@ -199,7 +199,7 @@ function startPlezierTimer() {
         }
         else {
             clearInterval(toenamePlezier);
-            alert("Nijntje heeft genoeg gespeeld");
+            alert("Nijntje heeft genoeg gespeeld!");
         }
     }, 10);
 }
@@ -213,6 +213,7 @@ function stopPlezierTimer() {
         }
         else {
             clearInterval(afnamePlezier);
+            alert("Nijntje verveelt zich!")
         }
     },
         10);
