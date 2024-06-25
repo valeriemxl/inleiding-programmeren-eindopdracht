@@ -64,7 +64,7 @@ h1 {
 }
 
 /* Outfits */
-.kleding {
+.kleding-knoppen {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -75,13 +75,13 @@ ul {
     list-style-type: none;
 }
 
-.kleding li {
+.kleding-knoppen li {
     /* flex-basis: 5em; */
     margin: 1em;
 }
 
 /* Outfits knoppen */
-.kleding li button {
+.kleding-knoppen li button {
     /* object-fit: cover; */
     width: 8em;
     height: 8em;
@@ -92,14 +92,14 @@ ul {
     cursor: pointer;
 }
 
-.kleding li button img {
+.kleding-knoppen li button img {
     /* object-fit: fill; */
     width: 5em;
     height: 8em;
 }
 
 /* Knoppen toepassen en random */
-.knoppen-rest {
+/* .knoppen-rest {
     display: flex;
 }
 
@@ -119,7 +119,7 @@ ul {
 
 .knop-random {
     margin: 2em;
-}
+} */
 
 /* Slapen, eten en spelen knoppen */
 .container {
