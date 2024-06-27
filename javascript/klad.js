@@ -398,9 +398,6 @@ knopSlapen.addEventListener("click", gaSlapen)
 knopEten.addEventListener("click", gaEten)
 knopSpelen.addEventListener("click", gaSpelen)
 
-// Initialisatie
-showDefault();
-
 /*
 Vragen:
 - ...
