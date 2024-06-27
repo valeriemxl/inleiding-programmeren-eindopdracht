@@ -1,4 +1,7 @@
 // Deze constanten verwijzen naar verschillende elementen in de HTML
+const audio = document.querySelector('#nijntjeAudio');
+const knopAudio = document.querySelector('#knopAudio');
+
 const pMain = document.querySelector("#textMain");
 
 const progressSlaap = document.querySelector("#progressSlaap");
@@ -38,27 +41,6 @@ let afnamePlezier;
 
 
 
-const audio = document.querySelector('#nijntjeAudio');
-const knopAudio = document.querySelector('#knopAudio');
-
-knopAudio.addEventListener('click', SpeelPauze)
-
-function SpeelPauze() {
-    if (audio.paused) {
-        audio.play();
-        knopAudio.textContent = 'Pauzeer muziek';
-    } else {
-        audio.pause();
-        knopAudio.textContent = 'Speel muziek af';
-    }
-}
-
-
-
-
-
-
-
 // Default: functie voor de eerste weergave van de tekst en afbeelding van Nijntje
 function showDefault() {
     pMain.textContent = "Klik op een knop om te beginnen";
@@ -67,7 +49,7 @@ function showDefault() {
 
 
 
-// Kleding: functies om de kleding van Nijntje te laten zien en tekst te updaten
+// Kleding: functies om de kleding van Nijntje te laten zien, tekst te updaten en andere knoppen uit te schakelen
 function showBlauw() {
     pMain.textContent = "Wat gaan we nu doen?";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
@@ -76,6 +58,10 @@ function showBlauw() {
     knopRood.disabled = false;
     knopFeest.disabled = false;
     knopCool.disabled = false;
+
+    knopSlapen.disabled = false;
+    knopEten.disabled = false;
+    knopSpelen.disabled = false;
 }
 
 function showRoze() {
@@ -85,6 +71,10 @@ function showRoze() {
     knopRood.disabled = true;
     knopFeest.disabled = true;
     knopCool.disabled = true;
+
+    knopSlapen.disabled = true;
+    knopEten.disabled = true;
+    knopSpelen.disabled = true;
 }
 
 function showRood() {
@@ -94,6 +84,10 @@ function showRood() {
     knopRoze.disabled = true;
     knopFeest.disabled = true;
     knopCool.disabled = true;
+
+    knopSlapen.disabled = true;
+    knopEten.disabled = true;
+    knopSpelen.disabled = true;
 }
 
 function showFeest() {
@@ -103,6 +97,10 @@ function showFeest() {
     knopRoze.disabled = true;
     knopRood.disabled = true;
     knopCool.disabled = true;
+
+    knopSlapen.disabled = true;
+    knopEten.disabled = true;
+    knopSpelen.disabled = true;
 }
 
 function showCool() {
@@ -112,8 +110,11 @@ function showCool() {
     knopRoze.disabled = true;
     knopRood.disabled = true;
     knopFeest.disabled = true;
-}
 
+    knopSlapen.disabled = true;
+    knopEten.disabled = true;
+    knopSpelen.disabled = true;
+}
 
 
 // Slapen, eten, spelen: functies om de status van Nijntje en knoppen aan te passen wanneer ze gaat slapen, eten of spelen
@@ -125,6 +126,11 @@ function showGaSlapen() {
     // Schakel andere knoppen uit tijdens het slapen
     knopEten.disabled = true;
     knopSpelen.disabled = true;
+
+    knopRoze.disabled = true;
+    knopRood.disabled = true;
+    knopFeest.disabled = true;
+    knopCool.disabled = true;
 }
 
 function showHeeftGeslapen() {
@@ -136,6 +142,11 @@ function showHeeftGeslapen() {
     // Schakel de knoppen weer in na het slapen
     knopEten.disabled = false;
     knopSpelen.disabled = false;
+
+    knopRoze.disabled = false;
+    knopRood.disabled = false;
+    knopFeest.disabled = false;
+    knopCool.disabled = false;
 }
 
 function showGaEten() {
@@ -180,6 +191,17 @@ function showHeeftGespeeld() {
     knopEten.disabled = false;
 }
 
+
+// Audio: functie om audio af te laten spelen en te laten stoppen
+function SpeelPauze() {
+    if (audio.paused) {
+        audio.play();
+        knopAudio.textContent = 'Pauzeer muziek';
+    } else {
+        audio.pause();
+        knopAudio.textContent = 'Speel muziek af';
+    }
+}
 
 
 // Timers: functies om de timers voor slaap, eten en plezier te starten en stoppen
@@ -365,6 +387,8 @@ function gaSpelen() {
 
 
 // Event listeners voor de kledingknoppen en activiteitenknoppen van Nijntje
+knopAudio.addEventListener('click', SpeelPauze)
+
 knopRoze.addEventListener("click", draagRoze)
 knopRood.addEventListener("click", draagRood)
 knopFeest.addEventListener("click", draagFeest)
@@ -388,16 +412,40 @@ Volgorde:
 !!! OVERAL COMMENTAAR !!!
 
 Bronnen:
-https://www.youtube.com/watch?v=KB6CRow6Ulw&ab_channel=BenCodeZen
-https://codepen.io/supercooldog5/pen/xxxBwdV
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress (progress bar)
-https://stackoverflow.com/questions/43524985/how-to-get-change-value-of-html5-progress-bar (progress bar)
-https://stackoverflow.com/questions/7188145/call-a-javascript-function-every-5-seconds-continuously (timer)
-https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button (knoppen disabelen)
-ChatGPT (interval timer)
-https://www.altcademy.com/codedb/examples/create-a-timer-that-creates-an-alert-in-10-seconds-in-javascript (timer alert)
-https://www.w3schools.com/jsref/met_win_setinterval.asp (interval timer)
-https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click (audio)
-https://stackoverflow.com/questions/9419263/how-to-play-audio (audio)
-https://www.youtube.com/watch?v=3yrMlCGri8U (audio bron)
+
+De bronnen voor de afbeeldingen staan in het HTML- en CSS-bestand
+Voor de afbeeldingen van de kleren heb ik Nijntje blauw gepakt en in Illustrator ge-edit
+
+Alle bronnen voor het audio onderdeel
+    https://www.youtube.com/watch?v=3yrMlCGri8U (audio bron)
+    https://www.movavi.com/audio-converter/convert-aifc-to-mp3.html (audio converter)
+    https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click (audio)
+    https://stackoverflow.com/questions/9419263/how-to-play-audio (audio)
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio (audio)
+    https://bito.ai/resources/javascript-play-mp3-javascript-explained/#:~:text=First%2C%20create%20an%20HTML%20page,function%20in%20the%20script%20tag (audio)
+    https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48 (audio)
+.
+
+Alle bronnen voor de progress bar
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress (progress bar)
+    https://stackoverflow.com/questions/43524985/how-to-get-change-value-of-html5-progress-bar (progress bar)
+.
+
+
+Alle bronnen voor de (interval)timers en de alerts
+    ChatGPT (interval timer)
+    https://stackoverflow.com/questions/7188145/call-a-javascript-function-every-5-seconds-continuously (timer)
+    https://www.altcademy.com/codedb/examples/create-a-timer-that-creates-an-alert-in-10-seconds-in-javascript (timer alert)
+    https://www.w3schools.com/jsref/met_win_setinterval.asp (interval timer)
+.
+
+Alle bronnen voor het uitschakelen van knoppen
+    https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button (knoppen disabelen)
+.
+
+Overige bronnen
+    https://chat.openai.com/chat.
+    https://www.youtube.com/watch?v=KB6CRow6Ulw&ab_channel=BenCodeZen (???)
+    https://codepen.io/supercooldog5/pen/xxxBwdV (???)
+.
 */

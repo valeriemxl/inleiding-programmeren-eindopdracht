@@ -14,16 +14,33 @@ body {
     color: black;
 }
 
+/* Audio */
+#audioEnButton button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    margin: 1em 0em 0em 1em;
+    border-radius: 1.5em;
+    padding: 0.5em 1em 0.5em 1em;
+    border: none;
+    background-color: rgb(255, 213, 0);
+}
+
+#audioEnButton button:hover {
+    outline: 0.25em solid rgb(0, 85, 152);
+    outline-offset: -0.25em;
+}
+
+
 /* Nijntje Tamagochi (tekst) */
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: center;
     margin: 0.5em;
 }
 
 /* Klik op een knop om te beginnen */
 #beginnen {
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     margin-bottom: 2em;
 }
@@ -37,8 +54,9 @@ h1 {
 
 /* Slaap, honger en health bar */
 #emoties {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 1em;
+    /* font-weight: bold; */
 }
 
 #slaap-progressie {
@@ -89,7 +107,7 @@ ul {
     background-color: transparent;
     border: none;
     border-radius: .25em;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #kleding-knoppen li button img {
@@ -97,29 +115,6 @@ ul {
     width: 5em;
     height: 8em;
 }
-
-/* Knoppen toepassen en random */
-/* #knoppen-rest {
-    display: flex;
-}
-
-#knoppen-rest button {
-    border: none;
-    padding: #5em;
-    background-color: aliceblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1em;
-    border-radius: #25em;
-    cursor: pointer;
-}
-
-#knop-toepassen {
-    margin: 2em;
-}
-
-#knop-random {
-    margin: 2em;
-} */
 
 /* Slapen, eten en spelen knoppen */
 #container {
@@ -140,14 +135,14 @@ ul {
     vertical-align: middle; */
     background-color: transparent;
     border: none;
-    cursor: pointer;
-    border-radius: 20px;
+    /* cursor: pointer; */
+    border-radius: 1.5em;
     overflow: hidden;
 }
 
 #knoppen button:hover {
-    outline: 5px solid blue;
-    outline-offset: -5px;
+    outline: 0.5em solid rgb(0, 85, 152);
+    outline-offset: -0.5em;
 }
 
 #knoppen button img {
@@ -184,4 +179,15 @@ ul {
     font-size: 1.3em;
     font-weight: bold;
     text-align: center;
+}
+
+button:enabled:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #000000;
+    color: #000000;
+    cursor: not-allowed;
+    opacity: 0.3;
 }
