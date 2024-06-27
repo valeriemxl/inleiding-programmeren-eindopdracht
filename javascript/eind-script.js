@@ -36,6 +36,29 @@ let scorePlezier = 0;
 let toenamePlezier;
 let afnamePlezier;
 
+
+
+const audio = document.querySelector('#nijntjeAudio');
+const knopAudio = document.querySelector('#knopAudio');
+
+knopAudio.addEventListener('click', SpeelPauze)
+
+function SpeelPauze() {
+    if (audio.paused) {
+        audio.play();
+        knopAudio.textContent = 'Pauzeer muziek';
+    } else {
+        audio.pause();
+        knopAudio.textContent = 'Speel muziek af';
+    }
+}
+
+
+
+
+
+
+
 // Default: functie voor de eerste weergave van de tekst en afbeelding van Nijntje
 function showDefault() {
     pMain.textContent = "Klik op een knop om te beginnen";
@@ -375,4 +398,6 @@ ChatGPT (interval timer)
 https://www.altcademy.com/codedb/examples/create-a-timer-that-creates-an-alert-in-10-seconds-in-javascript (timer alert)
 https://www.w3schools.com/jsref/met_win_setinterval.asp (interval timer)
 https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click (audio)
+https://stackoverflow.com/questions/9419263/how-to-play-audio (audio)
+https://www.youtube.com/watch?v=3yrMlCGri8U (audio bron)
 */
