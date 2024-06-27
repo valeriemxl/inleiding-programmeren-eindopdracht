@@ -5,7 +5,7 @@
 
 body {
     background-image: url("/inleiding-programmeren-eindopdracht/images/buiten-achtergrond.jpeg");
-    /* https://pin.it/1XP1GDCdz */
+    /* https://pin#it/1XP1GDCdz */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -22,49 +22,49 @@ h1 {
 }
 
 /* Klik op een knop om te beginnen */
-.beginnen {
+#beginnen {
     font-size: 2em;
     text-align: center;
     margin-bottom: 2em;
 }
 
 /* Slaap, honger en health bar + Nijntje tamagotchi afbeelding + outfits */
-.emoties-nijntje-kleding {
+#emoties-nijntje-kleding {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
 /* Slaap, honger en health bar */
-.emoties {
+#emoties {
     font-size: 2em;
     margin: 1em;
 }
 
-.slaap-progressie {
+#slaap-progressie {
     margin: 0.25em;
 }
 
-.honger-progressie {
+#honger-progressie {
     margin: 0.25em;
 }
 
-.plezier-progressie {
+#plezier-progressie {
     margin: 0.25em;
 }
 
 /* Nijntje tamagotchi afbeelding */
-.nijntje-blauw {
+#nijntje-blauw {
     text-align: center;
 }
 
-.nijntje-blauw img {
+#imgNijntjeBlauw {
     width: 15em;
     height: 25em;
 }
 
 /* Outfits */
-.kleding-knoppen {
+#kleding-knoppen {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -75,13 +75,13 @@ ul {
     list-style-type: none;
 }
 
-.kleding-knoppen li {
+#kleding-knoppen li {
     /* flex-basis: 5em; */
     margin: 1em;
 }
 
 /* Outfits knoppen */
-.kleding-knoppen li button {
+#kleding-knoppen li button {
     /* object-fit: cover; */
     width: 8em;
     height: 8em;
@@ -92,49 +92,49 @@ ul {
     cursor: pointer;
 }
 
-.kleding-knoppen li button img {
+#kleding-knoppen li button img {
     /* object-fit: fill; */
     width: 5em;
     height: 8em;
 }
 
 /* Knoppen toepassen en random */
-/* .knoppen-rest {
+/* #knoppen-rest {
     display: flex;
 }
 
-.knoppen-rest button {
+#knoppen-rest button {
     border: none;
-    padding: .5em;
+    padding: #5em;
     background-color: aliceblue;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
-    border-radius: .25em;
+    border-radius: #25em;
     cursor: pointer;
 }
 
-.knop-toepassen {
+#knop-toepassen {
     margin: 2em;
 }
 
-.knop-random {
+#knop-random {
     margin: 2em;
 } */
 
 /* Slapen, eten en spelen knoppen */
-.container {
+#container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.knoppen {
+#knoppen {
     display: flex;
     flex-direction: row;
     margin-top: 2em;
 }
 
-.knoppen button {
+#knoppen button {
     /* width: 8em;
     height: 8em;
     vertical-align: middle; */
@@ -145,26 +145,43 @@ ul {
     overflow: hidden;
 }
 
-.knoppen button:hover {
-
+#knoppen button:hover {
     outline: 5px solid blue;
     outline-offset: -5px;
 }
 
-.knoppen button img {
+#knoppen button img {
     width: 8em;
     height: 8em;
     /* border-radius: .25em; */
 }
 
-.knop-slapen {
+#knop-slapen {
     margin: 2em;
 }
 
-.knop-eten {
+#knop-eten {
     margin: 2em;
 }
 
-.knop-spelen {
+#knop-spelen {
     margin: 2em;
+}
+
+#textSlapen {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#textEten {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#textSpelen {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
 }

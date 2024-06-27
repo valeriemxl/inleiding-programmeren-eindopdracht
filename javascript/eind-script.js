@@ -1,24 +1,24 @@
 // Deze constanten verwijzen naar verschillende elementen in de HTML
-const pElement = document.querySelector("#mainText");
+const pMain = document.querySelector("#textMain");
 
 const progressSlaap = document.querySelector("#progressSlaap");
 const progressHonger = document.querySelector("#progressHonger");
 const progressPlezier = document.querySelector("#progressPlezier");
 
-const nijntjeBlauw = document.querySelector("#nijntje-blauw");
+const nijntjeBlauw = document.querySelector("#imgNijntjeBlauw");
 
 const knopRoze = document.querySelector("#kledingRoze");
 const knopRood = document.querySelector("#kledingRood");
 const knopFeest = document.querySelector("#kledingFeest");
 const knopCool = document.querySelector("#kledingCool");
 
-const knopSlapen = document.querySelector("#knop-slapen");
-const knopEten = document.querySelector("#knop-eten");
-const knopSpelen = document.querySelector("#knop-spelen");
+const knopSlapen = document.querySelector("#knopSlapen");
+const knopEten = document.querySelector("#knopEten");
+const knopSpelen = document.querySelector("#knopSpelen");
 
-const pSlapen = document.querySelector("#slapenText");
-const pEten = document.querySelector("#etenText");
-const pSpelen = document.querySelector("#spelenText");
+const pSlapen = document.querySelector("#textSlapen");
+const pEten = document.querySelector("#textEten");
+const pSpelen = document.querySelector("#textSpelen");
 
 
 // Variabelen om de status van Nijntje en haar scores bij te houden
@@ -36,47 +36,66 @@ let scorePlezier = 0;
 let toenamePlezier;
 let afnamePlezier;
 
-
-
 // Default: functie voor de eerste weergave van de tekst en afbeelding van Nijntje
 function showDefault() {
-    pElement.textContent = "Klik op een knop om te beginnen";
-    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.webp";
+    pMain.textContent = "Klik op een knop om te beginnen";
+    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
 }
 
 
 
 // Kleding: functies om de kleding van Nijntje te laten zien en tekst te updaten
 function showBlauw() {
-    pElement.textContent = "Wat gaan we nu doen?";
+    pMain.textContent = "Wat gaan we nu doen?";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
+
+    knopRoze.disabled = false;
+    knopRood.disabled = false;
+    knopFeest.disabled = false;
+    knopCool.disabled = false;
 }
 
 function showRoze() {
-    pElement.textContent = "Nijntje ziet er goed uit!";
+    pMain.textContent = "Nijntje ziet er goed uit!";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-roze-strik.png";
+
+    knopRood.disabled = true;
+    knopFeest.disabled = true;
+    knopCool.disabled = true;
 }
 
 function showRood() {
-    pElement.textContent = "Wauw!";
+    pMain.textContent = "Wauw!";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijnjte-rood.png";
+
+    knopRoze.disabled = true;
+    knopFeest.disabled = true;
+    knopCool.disabled = true;
 }
 
 function showFeest() {
-    pElement.textContent = "Nijntje voelt zich feestelijk!";
+    pMain.textContent = "Nijntje voelt zich feestelijk!";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-feest.png";
+
+    knopRoze.disabled = true;
+    knopRood.disabled = true;
+    knopCool.disabled = true;
 }
 
 function showCool() {
-    pElement.textContent = "Nijntje ziet er super cool uit!";
+    pMain.textContent = "Nijntje ziet er super cool uit!";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-cool.png";
+
+    knopRoze.disabled = true;
+    knopRood.disabled = true;
+    knopFeest.disabled = true;
 }
 
 
 
 // Slapen, eten, spelen: functies om de status van Nijntje en knoppen aan te passen wanneer ze gaat slapen, eten of spelen
 function showGaSlapen() {
-    pElement.textContent = "Nijntje is aan het slapen";
+    pMain.textContent = "Nijntje is aan het slapen";
     pSlapen.textContent = "Stop";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/slapen.jpeg";
 
@@ -86,7 +105,7 @@ function showGaSlapen() {
 }
 
 function showHeeftGeslapen() {
-    pElement.textContent = "Nijntje heeft heerlijk geslapen";
+    pMain.textContent = "Nijntje heeft heerlijk geslapen";
     pSlapen.textContent = "Slapen";
     progressSlaap.value = scoreSlaap;
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
@@ -97,7 +116,7 @@ function showHeeftGeslapen() {
 }
 
 function showGaEten() {
-    pElement.textContent = "Nijntje is aan het eten";
+    pMain.textContent = "Nijntje is aan het eten";
     pEten.textContent = "Stop";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/eten.jpeg";
 
@@ -107,7 +126,7 @@ function showGaEten() {
 }
 
 function showHeeftGegeten() {
-    pElement.textContent = "Nijntje heeft goed gegeten";
+    pMain.textContent = "Nijntje heeft goed gegeten";
     pEten.textContent = "Eten";
     progressHonger.value = scoreHonger;
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
@@ -118,7 +137,7 @@ function showHeeftGegeten() {
 }
 
 function showGaSpelen() {
-    pElement.textContent = "Nijntje is aan het spelen"
+    pMain.textContent = "Nijntje is aan het spelen"
     pSpelen.textContent = "Stop"
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/spelen.jpeg"
 
@@ -128,7 +147,7 @@ function showGaSpelen() {
 }
 
 function showHeeftGespeeld() {
-    pElement.textContent = "Nijntje heeft lekker gespeeld";
+    pMain.textContent = "Nijntje heeft lekker gespeeld";
     pSpelen.textContent = "Spelen";
     progressPlezier.value = scorePlezier;
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
@@ -354,4 +373,6 @@ https://stackoverflow.com/questions/7188145/call-a-javascript-function-every-5-s
 https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button (knoppen disabelen)
 ChatGPT (interval timer)
 https://www.altcademy.com/codedb/examples/create-a-timer-that-creates-an-alert-in-10-seconds-in-javascript (timer alert)
+https://www.w3schools.com/jsref/met_win_setinterval.asp (interval timer)
+https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click (audio)
 */

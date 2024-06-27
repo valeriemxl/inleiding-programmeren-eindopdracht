@@ -12,40 +12,42 @@
 
 <body>
 
+    <button id="knopAudio">Hier plaatje</button>
+
     <h1>Nijntje Tamagochi</h1>
 
-    <div class="beginnen">
-        <p id="mainText">Klik op een knop om te beginnen</p>
+    <div id="beginnen">
+        <p id="textMain">Klik op een knop om te beginnen</p>
     </div>
 
-    <div class="emoties-nijntje-kleding">
-        <div class="emoties">
-            <div class="slaap-progressie">
-                <div class="slaap">
+    <div id="emoties-nijntje-kleding">
+        <div id="emoties">
+            <div id="slaap-progressie">
+                <div id="slaap">
                     <p>Slaap</p>
                 </div>
 
-                <div class="slaap-cijfer">
+                <div id="slaap-cijfer">
                     <progress id="progressSlaap" max="100" value="0"></progress>
                 </div>
             </div>
 
-            <div class="honger-progressie"> 
-                <div class="honger">
+            <div id="honger-progressie">
+                <div id="honger">
                     <p>Honger</p>
                 </div>
 
-                <div class="honger-cijfer">
+                <div id="honger-cijfer">
                     <progress id="progressHonger" max="100" value="0"></progress>
                 </div>
             </div>
 
-            <div class="plezier-progressie">
-                <div class="plezier">
+            <div id="plezier-progressie">
+                <div id="plezier">
                     <p>Plezier</p>
                 </div>
 
-                <div class="plezier-cijfer">
+                <div id="plezier-cijfer">
                     <progress id="progressPlezier" max="100" value="0"></progress>
                 </div>
             </div>
@@ -53,14 +55,14 @@
 
 
 
-        <div class="nijntje-blauw">
-            <img id="nijntje-blauw" src="images/nijntje-blauw.png" alt="">
+        <div id="nijntje-blauw">
+            <img id="imgNijntjeBlauw" src="images/nijntje-blauw.png">
         </div>
 
 
 
-        <div class="kleding">
-            <ul class="kleding-knoppen">
+        <div id="kleding">
+            <ul id="kleding-knoppen">
                 <li>
                     <button id="kledingRoze"><img src="images/nijntje-roze-strik.png"></button>
                 </li>
@@ -77,12 +79,12 @@
 
 
 
-            <!-- <div class="knoppen-rest">
-                <div class="knop-toepassen">
+            <!-- <div id="knoppen-rest">
+                <div id="knop-toepassen">
                     <button id="knop-toepassen">Toepassen</button>
                 </div>
 
-                <div class="knop-random">
+                <div id="knop-random">
                     <button id="knop-random">Random</button>
                 </div>
             </div> -->
@@ -92,21 +94,21 @@
 
 
 
-    <div class="container">
-        <div class="knoppen">
-            <div class="knop-slapen">
-                <button id="knop-slapen"><img src="images/slapen.jpeg"></button>
-                <p id="slapenText">Slapen</p>
+    <div id="container">
+        <div id="knoppen">
+            <div id="knop-slapen">
+                <button id="knopSlapen"><img src="images/slapen.jpeg"></button>
+                <p id="textSlapen">Slapen</p>
             </div>
 
-            <div class="knop-eten">
-                <button id="knop-eten"><img src="images/eten.jpeg"></button>
-                <p id="etenText">Eten</p>
+            <div id="knop-eten">
+                <button id="knopEten"><img src="images/eten.jpeg"></button>
+                <p id="textEten">Eten</p>
             </div>
 
-            <div class="knop-spelen">
-                <button id="knop-spelen"><img src="images/spelen.jpeg"></button>
-                <p id="spelenText">Spelen</p>
+            <div id="knop-spelen">
+                <button id="knopSpelen"><img src="images/spelen.jpeg"></button>
+                <p id="textSpelen">Spelen</p>
             </div>
         </div>
     </div>
@@ -115,6 +117,7 @@
 
 
     <script src="javascript/eind-script.js"></script>
+
 </body>
 
 </html>
