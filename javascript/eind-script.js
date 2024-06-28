@@ -54,15 +54,6 @@ function showDefault() {
 function showBlauw() {
     pMain.textContent = "Wat gaan we nu doen?";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
-
-    // knopRoze.disabled = false;
-    // knopRood.disabled = false;
-    // knopFeest.disabled = false;
-    // knopCool.disabled = false;
-
-    // knopSlapen.disabled = false;
-    // knopEten.disabled = false;
-    // knopSpelen.disabled = false;
 }
 
 function showRoze() {
