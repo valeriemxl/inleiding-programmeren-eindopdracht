@@ -25,7 +25,11 @@ const pSpelen = document.querySelector("#textSpelen");
 
 
 // Variabelen om de status van Nijntje en haar scores bij te houden
-let nijntjeStatus = true;
+let isSleeping = false;
+let isEating = false;
+let isPlaying = false;
+
+let currentOutfit = "blue";
 
 let scoreSlaap = 0;
 let toenameSlaap;
@@ -40,80 +44,52 @@ let toenamePlezier;
 let afnamePlezier;
 
 
-
 // Default: functie voor de eerste weergave van de tekst en afbeelding van Nijntje
 function showDefault() {
     pMain.textContent = "Klik op een knop om te beginnen";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
+    currentOutfit = "blue";
 }
-
 
 
 // Kleding: functies om de kleding van Nijntje te laten zien, tekst te updaten en andere knoppen uit te schakelen
 function showBlauw() {
     pMain.textContent = "Wat gaan we nu doen?";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
+    currentOutfit = "blue";
 
-    knopRoze.disabled = false;
-    knopRood.disabled = false;
-    knopFeest.disabled = false;
-    knopCool.disabled = false;
-
-    knopSlapen.disabled = false;
-    knopEten.disabled = false;
-    knopSpelen.disabled = false;
 }
 
 function showRoze() {
     pMain.textContent = "Nijntje ziet er goed uit!";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-roze-strik.png";
+    currentOutfit = "pink";
 
-    knopRood.disabled = true;
-    knopFeest.disabled = true;
-    knopCool.disabled = true;
-
-    knopSlapen.disabled = true;
-    knopEten.disabled = true;
-    knopSpelen.disabled = true;
+    
 }
 
 function showRood() {
     pMain.textContent = "Wauw!";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijnjte-rood.png";
+    currentOutfit = "red";
 
-    knopRoze.disabled = true;
-    knopFeest.disabled = true;
-    knopCool.disabled = true;
-
-    knopSlapen.disabled = true;
-    knopEten.disabled = true;
-    knopSpelen.disabled = true;
+   
 }
 
 function showFeest() {
     pMain.textContent = "Nijntje voelt zich feestelijk!";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-feest.png";
+    currentOutfit = "party";
 
-    knopRoze.disabled = true;
-    knopRood.disabled = true;
-    knopCool.disabled = true;
-
-    knopSlapen.disabled = true;
-    knopEten.disabled = true;
-    knopSpelen.disabled = true;
+    
 }
 
 function showCool() {
     pMain.textContent = "Nijntje ziet er super cool uit!";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-cool.png";
+    currentOutfit = "cool";
 
-    knopRoze.disabled = true;
-    knopRood.disabled = true;
-    knopFeest.disabled = true;
-
-    knopSlapen.disabled = true;
-    knopEten.disabled = true;
-    knopSpelen.disabled = true;
+   
 }
 
 
@@ -122,73 +98,64 @@ function showGaSlapen() {
     pMain.textContent = "Nijntje is aan het slapen";
     pSlapen.textContent = "Stop";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/slapen.jpeg";
+    isSleeping = true;
 
-    // Schakel andere knoppen uit tijdens het slapen
-    knopEten.disabled = true;
-    knopSpelen.disabled = true;
 
-    knopRoze.disabled = true;
-    knopRood.disabled = true;
-    knopFeest.disabled = true;
-    knopCool.disabled = true;
+
 }
 
 function showHeeftGeslapen() {
     pMain.textContent = "Nijntje heeft heerlijk geslapen";
     pSlapen.textContent = "Slapen";
     progressSlaap.value = scoreSlaap;
-    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
+    isSleeping = false;
 
-    // Schakel de knoppen weer in na het slapen
-    knopEten.disabled = false;
-    knopSpelen.disabled = false;
 
-    knopRoze.disabled = false;
-    knopRood.disabled = false;
-    knopFeest.disabled = false;
-    knopCool.disabled = false;
+
+    if (currentOutfit === "blue") {
+        showBlauw();
+    }
 }
 
 function showGaEten() {
     pMain.textContent = "Nijntje is aan het eten";
     pEten.textContent = "Stop";
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/eten.jpeg";
+    isEating = true;
 
-    // Schakel andere knoppen uit tijdens het eten
-    knopSlapen.disabled = true;
-    knopSpelen.disabled = true;
+
 }
 
 function showHeeftGegeten() {
     pMain.textContent = "Nijntje heeft goed gegeten";
     pEten.textContent = "Eten";
     progressHonger.value = scoreHonger;
-    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
+    isEating = false;
 
-    // Schakel de knoppen weer in na het eten
-    knopSlapen.disabled = false;
-    knopSpelen.disabled = false;
+
+    if (currentOutfit === "blue") {
+        showBlauw();
+    }
 }
 
 function showGaSpelen() {
     pMain.textContent = "Nijntje is aan het spelen"
     pSpelen.textContent = "Stop"
     nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/spelen.jpeg"
+    isPlaying = true;
 
-    // Schakel andere knoppen uit tijdens het spelen
-    knopSlapen.disabled = true
-    knopEten.disabled = true
 }
 
 function showHeeftGespeeld() {
     pMain.textContent = "Nijntje heeft lekker gespeeld";
     pSpelen.textContent = "Spelen";
     progressPlezier.value = scorePlezier;
-    nijntjeBlauw.src = "/inleiding-programmeren-eindopdracht/images/nijntje-blauw.png";
+    isPlaying = false;
 
-    // Schakel de knoppen weer in na het spelen
-    knopSlapen.disabled = false;
-    knopEten.disabled = false;
+
+    if (currentOutfit === "blue") {
+        showBlauw();
+    }
 }
 
 
@@ -293,61 +260,71 @@ function stopPlezierTimer() {
 
 // Kleding: functies om de kleding van Nijntje te veranderen
 function draagRoze() {
-    if (nijntjeStatus) {
-        nijntjeStatus = false;
+    if (currentOutfit !== "pink") {
+        currentOutfit = "pink";
         showRoze(); // Toon Nijntje in roze kleding
     }
-    else {
-        nijntjeStatus = true;
-        showBlauw(); // Toon Nijntje in blauwe kleding
+    if (isSleeping) {
+        showGaSlapen();
+    } else if (isEating) {
+        showGaEten();
+    } else if (isPlaying) {
+        showGaSpelen();
     }
 }
 
 function draagRood() {
-    if (nijntjeStatus) {
-        nijntjeStatus = false;
+    if (currentOutfit !== "red") {
+        currentOutfit = "red";
         showRood(); // Toon Nijntje in rode kleding
     }
-    else {
-        nijntjeStatus = true;
-        showBlauw(); // Toon Nijntje in blauwe kleding
+    if (isSleeping) {
+        showGaSlapen();
+    } else if (isEating) {
+        showGaEten();
+    } else if (isPlaying) {
+        showGaSpelen();
     }
 }
 
 function draagFeest() {
-    if (nijntjeStatus) {
-        nijntjeStatus = false;
+    if (currentOutfit !== "party") {
+        currentOutfit = "party";
         showFeest(); // Toon Nijnjte in feestkleding
     }
-    else {
-        nijntjeStatus = true;
-        showBlauw(); // Toon Nijntje in blauwe kleding
+    if (isSleeping) {
+        showGaSlapen();
+    } else if (isEating) {
+        showGaEten();
+    } else if (isPlaying) {
+        showGaSpelen();
     }
 }
 
 function draagCool() {
-    if (nijntjeStatus) {
-        nijntjeStatus = false;
+    if (currentOutfit !== "cool") {
+        currentOutfit = "cool";
         showCool(); // Toon Nijnjte in coole kleding
     }
-    else {
-        nijntjeStatus = true;
-        showBlauw(); // Toon Nijntje in blauwe kleding
+    if (isSleeping) {
+        showGaSlapen();
+    } else if (isEating) {
+        showGaEten();
+    } else if (isPlaying) {
+        showGaSpelen();
     }
 }
 
 
-
 // Slapen, eten, spelen: functies om Nijntje te laten slapen, eten en spelen
 function gaSlapen() {
-    if (nijntjeStatus) {
-        nijntjeStatus = false;
+    if (!isSleeping) {
+        isSleeping = true;
         showGaSlapen(); // Nijntje gaat slapen
 
         startSlaapTimer(); // Start de slaaptimer
-    }
-    else {
-        nijntjeStatus = true;
+    } else {
+        isSleeping = false;
         showHeeftGeslapen(); // Nijntje is wakker geworden
 
         stopSlaapTimer(); // Stopt de slaaptimer
@@ -355,14 +332,13 @@ function gaSlapen() {
 }
 
 function gaEten() {
-    if (nijntjeStatus) {
-        nijntjeStatus = false;
+    if (!isEating) {
+        isEating = true;
         showGaEten(); // Nijntje gaat eten
 
         startHongerTimer(); // Start de hongertimer
-    }
-    else {
-        nijntjeStatus = true;
+    } else {
+        isEating = false;
         showHeeftGegeten(); // Nijntje heeft gegeten
 
         stopHongerTimer(); // Stop de hongertimer
@@ -370,14 +346,13 @@ function gaEten() {
 }
 
 function gaSpelen() {
-    if (nijntjeStatus) {
-        nijntjeStatus = false;
+    if (!isPlaying) {
+        isPlaying = true;
         showGaSpelen(); // Nijntje gaat spelen
 
         startPlezierTimer(); // Start de pleziertimer
-    }
-    else {
-        nijntjeStatus = true;
+    } else {
+        isPlaying = false;
         showHeeftGespeeld(); // Nijntje is klaar met spelen
 
         stopPlezierTimer(); // Stop de pleziertimer
@@ -397,6 +372,10 @@ knopCool.addEventListener("click", draagCool)
 knopSlapen.addEventListener("click", gaSlapen)
 knopEten.addEventListener("click", gaEten)
 knopSpelen.addEventListener("click", gaSpelen)
+
+// Roep de default functie aan om de initiële weergave van Nijntje in te stellen
+showDefault();
+
 
 /*
 Vragen:
