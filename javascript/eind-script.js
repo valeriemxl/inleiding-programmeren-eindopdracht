@@ -130,8 +130,15 @@ function SpeelPauze() {
 }
 
 
-// Timers: functies om de timers voor slaap, eten en plezier te starten en stoppen
-function startSlaapTimer() {
+/* COMMENTAAR: 
+    // Timers: functies om de timers voor slaap, eten en plezier te starten en stoppen.
+*/
+
+/* BRONNEN: 
+    // ChatGPT --> Prompt: Hoe zorg ik ervoor dat de timer stopt met oplopen en langzaam gaat aflopen als Nijntje stopt met slapen? En leg uit.
+*/
+
+function startSlaapTimer() { //
     toenameSlaap = setInterval(() => {
         if (scoreSlaap < 100) {
             scoreSlaap += 0.20;
@@ -297,6 +304,7 @@ function gaSlapen() {
     }
 }
 
+// ----- Met hulp van de oom van mijn vriend ----- //
 function gaEten() {
     if (nijntjeStatus == 7) {
         nijntjeStatus = 8;
